@@ -32,13 +32,13 @@
   <div class="lists">
     <div class="list" v-for="(item,index) in list.slice().reverse()">
       <div class="colorblock">
-        <p @click="deleteList(index)">-</p>
-        <p @click="showaddList">+</p>
+        <p @click="deleteList(index)"><i class="fa fa-times" aria-hidden="true"></i></p>
+        <p @click="showaddList"><i class="fa fa-plus" aria-hidden="true"></i></p>
       </div>
       <h2>{{item.title}}</h2>
-      <p>{{item.content}}</p>
-      <p>{{item.time}}</p>
-      <p>{{item.completed}}</p>
+      <p class="samesize">{{item.content}}</p>
+      <p><i class="fa fa-calendar" aria-hidden="true"></i>{{item.time}}</p>
+      <p><i class="fa fa-check-square-o" aria-hidden="true"></i>{{item.completed}}</p>
     </div>
   </div>  
 </div>
