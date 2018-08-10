@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>A Pen by  Diuer</title>
+  
+  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <header>TodoList</header>
+<div id="app">
+<div class="center">
+  <div class="addList">
+    <p>Title</p>
+    <input type="text" v-model="newtitle">
+    <p>Content</p>
+    <textarea v-model="newcontent"></textarea>
+    <p>Time</p>
+    <input type="date" v-model="newtime">
+    <button class="submit" @click="addList">Submit</button>
+    <button class="cancel" @click="showList">Cancel</button>
+  </div>
+  <div class="lists">
+    <div class="list" v-for="(item,index) in list.slice().reverse()">
+      <div class="colorblock">
+        <p @click="deleteList(index)">-</p>
+        <p @click="showaddList">+</p>
+      </div>
+      <h2>{{item.title}}</h2>
+      <p>{{item.content}}</p>
+      <p>{{item.time}}</p>
+      <p>{{item.completed}}</p>
+    </div>
+  </div>  
+</div>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vuex/3.0.1/vuex.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+$fm1: 'Roboto', sans-serif;
+$fm2: '微軟正黑體';
+$fz1: 24px;
+$fz2: 16px;
+$blue: #77DDFF;
+$orange: #FFBB66;
+*{
+  margin: 0;
+  padding: 0;
+  position: relative;
+  list-style: none;
+  line-height: 1;
+  box-sizing: border-box;
+}
+clearfix{
+  clear: both;
+}
+body{
+  display: inline-block;
+  max-width: 960px;
+  width: 100%;
+  // margin: 0 auto;
+  // font-family: $fm1;
+  background-color: $orange;
+}
+p, h2{
+  margin: 10px;
+}
+header{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  width: 100vw;
+  height: 50px;
+  font-size: $fz1;
+  font-family: $fm1;
+  z-index: 10;
+}
+.addList{
+  display: none;
+  width: 100%;
+  height: 350px;
+  // margin: 100px calc((100vw - 80vw)/2);
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,.7);
+  font-family: $fm1;
+  p{
+    font-family: $fm1;
+    margin: 0 0 2px 0;
+    font-size: $fz1;
+    color: #444;
+  }
+  input{
+    border: 0px;
+    width: 100%;
+    height: 40px;
+    margin: 5px 0 15px 0;
+    padding: 10px;
+    font-size: $fz2;
+  }
+  textarea{
+    display: block;
+    border: 0px;
+    width: 100%;
+    height: 50px;
+    margin: 5px 0 15px 0;
+    padding: 10px;
+    font-size: $fz2;
+  }
+  button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc((100% - 8px)/2);
+    height: 50px;
+    margin: 0 2px;
+    float: left;
+    font-size: $fz1;
+    font-family: $fm1;
+    color: #444;
+    border: 0px;
+    border-radius: 5px;
+    background-color: $orange;
+  }
+  button:after{
+    clear: both;
+  }
+}
+.center{
+  width: 650px;
+  top: 50px;
+  margin: 100px calc((100vw - 650px)/2);
+}
+.lists{
+  display: block;
+  position: relative;
+  max-width: 960px;
+  width: 100%;
+  padding: 10px;
+}
+.colorblock{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 25px;
+  background-color: #FFFF33;
+  p{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    p: auto 2px;
+    width: 20px;
+    height: 100%;
+  }
+  p:hover{
+    cursor: pointer;
+  }
+}
+.list{
+  position: relative;
+  display: inline-block;
+  min-width: 200px;
+  width: 200px;
+  height: 250px;
+  margin: 5px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background-color: #FFFFBB;
+  font-family: $fm2;
+}
