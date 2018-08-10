@@ -137,7 +137,7 @@ header {
   width: 20px;
   height: 100%;
 }
-.colorblock p:hover {
+.colorblock p:hover, .colorblock i:hover{
   cursor: pointer;
 }
 
