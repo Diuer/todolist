@@ -11,6 +11,7 @@ $orange: #FFBB66;
   list-style: none;
   line-height: 1;
   box-sizing: border-box;
+  cursor: default;
 }
 clearfix{
   clear: both;
@@ -22,6 +23,10 @@ body{
   // margin: 0 auto;
   // font-family: $fm1;
   background-color: $orange;
+}
+i{
+  color: #444;
+  width: 20px;
 }
 p, h2{
   margin: 10px;
@@ -90,6 +95,18 @@ header{
   button:after{
     clear: both;
   }
+  .submit:hover{
+    cursor: pointer;
+    background-color: #84C1FF;
+    transition: all 0.5s;
+    color: white;
+  }
+  .cancel:hover{
+    cursor: pointer;
+    background-color: #FF7575;
+    transition: all 0.5s;
+    color: white;
+  }
 }
 .center{
   width: 650px;
@@ -114,7 +131,8 @@ header{
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    p: auto 2px;
+    padding: 10px;
+    margin: auto 2px;
     width: 20px;
     height: 100%;
   }
@@ -133,4 +151,7 @@ header{
   border-radius: 5px;
   background-color: #FFFFBB;
   font-family: $fm2;
+  .samesize {
+    height: 150px;
+  }
 }
