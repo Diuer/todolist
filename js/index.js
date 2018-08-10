@@ -7,9 +7,9 @@ var list = [
     favorited: false
   },
   {
-    title: "200天",
-    content: "丟丟與小卲的第兩百天到數",
-    time: "2018-11-09",
+    title: "中秋節",
+    content: "在農曆8/15，是禮拜一",
+    time: "2018-09-24",
     completed: false,
     favorited: false
   }
