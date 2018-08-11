@@ -3,42 +3,54 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>A Pen by  Diuer</title>
+  <title>TodoList</title>
   
   
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
 
-      <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style/style.css">
 
   
 </head>
 
 <body>
 
-  <header>TodoList</header>
+<header>
+  <p class="title">TodoList</p>
+</header>
 <div id="app">
 <div class="center">
   <div class="addList">
     <p>Title</p>
     <input type="text" v-model="newtitle">
     <p>Content</p>
-    <textarea v-model="newcontent"></textarea>
-    <p>Time</p>
-    <input type="date" v-model="newtime">
+    <input type="text" v-model="newcontent">
+    <div class="two">
+      <p>Location</p>
+      <input type="text" v-model="newlocation">
+    </div>
+    <div class="two">
+      <p>Time</p>
+      <input type="date" v-model="newtime">
+    </div>
     <button class="submit" @click="addList">Submit</button>
     <button class="cancel" @click="showList">Cancel</button>
   </div>
   <div class="lists">
     <div class="list" v-for="(item,index) in list.slice().reverse()">
       <div class="colorblock">
+        <p @click="completeList(item)" v-if="item.completed"><i class="fa fa-check-circle" aria-hidden="true" style="color: #FF5511;"></i></p>
+        <p @click="completeList(item)" v-if="!item.completed"><i class="fa fa-check-circle-o" aria-hidden="true"></i></p>
+        <p @click="favoriteList(item)" v-if="item.favorited"><i class="fa fa-star" aria-hidden="true" style="color: #FF5511;"></i></p>
+        <p @click="favoriteList(item)" v-if="!item.favorited"><i class="fa fa-star-o" aria-hidden="true"></i></p>
         <p @click="deleteList(index)"><i class="fa fa-times" aria-hidden="true"></i></p>
         <p @click="showaddList"><i class="fa fa-plus" aria-hidden="true"></i></p>
       </div>
       <h2>{{item.title}}</h2>
       <p class="samesize">{{item.content}}</p>
+      <p><i class="fa fa-location-arrow" aria-hidden="true"></i>{{item.location}}</p>
       <p><i class="fa fa-calendar" aria-hidden="true"></i>{{item.time}}</p>
-      <p><i class="fa fa-check-square-o" aria-hidden="true"></i>{{item.completed}}</p>
     </div>
   </div>  
 </div>
