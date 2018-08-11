@@ -3,6 +3,7 @@ var list = [
     title: "跨年",
     content: "跨年的時間是在每年的最後一天喔",
     time: "2018-12-31",
+    location: "台北101",
     completed: false,
     favorited: false
   },
@@ -10,6 +11,7 @@ var list = [
     title: "中秋節",
     content: "在農曆8/15，是禮拜一",
     time: "2018-09-24",
+    location: "冬山河親水公園",
     completed: false,
     favorited: false
   }
@@ -20,7 +22,8 @@ let app = new Vue({
     list: list,
     newtitle: "",
     newcontent: "",
-    newtime: ""
+    newtime: "",
+    newlocation: ""
   },
   methods: {
     showaddList: function(){
@@ -35,12 +38,14 @@ let app = new Vue({
         title: this.newtitle,
         content: this.newcontent,
         time: this.newtime,
+        location: this.newlocation,
         completed: false,
         favorited: false
       })
       this.newtitle=""
       this.newcontent=""
       this.newtime=""
+      this.newlocation=""
       $('.addList').css('display','none')
       $('.lists').css('display','block')
     },
@@ -50,6 +55,12 @@ let app = new Vue({
     showList: function(){
       $('.addList').css('display','none')
       $('.lists').css('display','block')
+    },
+    favoriteList: function(whichFavorite){
+      whichFavorite.favorited = !whichFavorite.favorited
+    },
+    completeList: function(whichComplete){
+      whichComplete.completed = !whichComplete.completed
     }
   },
   mounted(){
