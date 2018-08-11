@@ -5,8 +5,10 @@
   position: relative;
   list-style: none;
   line-height: 1;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   cursor: default;
+  font-family: "Roboto", sans-serif;
 }
 
 clearfix {
@@ -20,7 +22,7 @@ body {
   background-color: #FFBB66;
 }
 
-i{
+i {
   color: #444;
   width: 20px;
 }
@@ -31,16 +33,28 @@ p, h2 {
 
 header {
   position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: black;
   color: white;
   width: 100vw;
   height: 50px;
+  margin: 0;
   font-size: 24px;
   font-family: "Roboto", sans-serif;
   z-index: 10;
+}
+
+header .title {
+  position: absolute;
+  left: 0;
 }
 
 .addList {
@@ -53,33 +67,39 @@ header {
   background-color: rgba(255, 255, 255, 0.7);
   font-family: "Roboto", sans-serif;
 }
+
 .addList p {
   font-family: "Roboto", sans-serif;
   margin: 0 0 2px 0;
   font-size: 24px;
   color: #444;
 }
+
 .addList input {
-  border: 0px;
+  border: 1px solid transparent;
   width: 100%;
   height: 40px;
   margin: 5px 0 15px 0;
   padding: 10px;
   font-size: 16px;
+  border-radius: 5px;
 }
-.addList textarea {
-  display: block;
-  border: 0px;
-  width: 100%;
-  height: 50px;
-  margin: 5px 0 15px 0;
-  padding: 10px;
-  font-size: 16px;
+
+.addList .two {
+  display: inline-block;
+  width: calc((100% - 4px)/ 2);
 }
+
 .addList button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: calc((100% - 8px)/2);
   height: 50px;
   margin: 0 2px;
@@ -91,18 +111,23 @@ header {
   border-radius: 5px;
   background-color: #FFBB66;
 }
+
 .addList button:after {
   clear: both;
 }
-.submit:hover{
+
+.addList .submit:hover {
   cursor: pointer;
   background-color: #84C1FF;
+  -webkit-transition: all 0.5s;
   transition: all 0.5s;
   color: white;
 }
-.cancel:hover{
+
+.addList .cancel:hover {
   cursor: pointer;
   background-color: #FF7575;
+  -webkit-transition: all 0.5s;
   transition: all 0.5s;
   color: white;
 }
@@ -122,23 +147,53 @@ header {
 }
 
 .colorblock {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   height: 25px;
   background-color: #FFFF33;
 }
+
 .colorblock p {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: auto 2px;
   width: 20px;
   height: 100%;
 }
-.colorblock p:hover, .colorblock i:hover{
+
+.colorblock p i {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.colorblock p i:hover {
   cursor: pointer;
+  color: #FF5511;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .list {
@@ -153,6 +208,11 @@ header {
   background-color: #FFFFBB;
   font-family: "微軟正黑體";
 }
+
+.list p {
+  height: 16px;
+}
+
 .list .samesize {
   height: 120px;
 }
